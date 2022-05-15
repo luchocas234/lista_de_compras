@@ -22,7 +22,7 @@ export default function Header({tareas,mostrarCompletadas, cambiarMostrarComplet
         className='header__boton' 
         onClick={()=> toggleCompletadas()}
         >
-        No mostrar {newTareas.length} Completadas
+        No mostrar Completadas
             <FontAwesomeIcon icon={faEyeSlash} className="header__icono-boton"/>
             
         </button>

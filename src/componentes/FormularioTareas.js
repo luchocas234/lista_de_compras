@@ -4,7 +4,7 @@ import { v4 as uuidv4 } from 'uuid';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {faPlusSquare} from '@fortawesome/free-solid-svg-icons';
 
-const FormularioTareas = ({tareas, cambiarTareas}) => {
+const FormularioTareas = ({tareas, cambiarTareas, fechanew}) => {
 	const [inputTarea, cambiarInputTarea] = useState('');
 
 	const handleInput = (e) => {
@@ -20,12 +20,16 @@ const FormularioTareas = ({tareas, cambiarTareas}) => {
 				{
 					id: uuidv4(),
 					texto: inputTarea,
-					completada: false
+					completada: false,
+					fechaCreada:fechanew(),
 				}
 			]
 		);
 		cambiarInputTarea('');
 	}
+
+
+	
 
 	return (
 		<form action="" className="formulario-tareas" onSubmit={handleSubmit}>
@@ -36,6 +40,7 @@ const FormularioTareas = ({tareas, cambiarTareas}) => {
 				value={inputTarea}
 				onChange={(e) => handleInput(e)}
 			/>
+			{inputTarea !== '' ? 
 			<button 
 				type="submit"
 				className="formulario-tareas__btn"
@@ -44,7 +49,8 @@ const FormularioTareas = ({tareas, cambiarTareas}) => {
 					icon={faPlusSquare}
 					className="formulario-tareas__icono-btn" 
 				/>
-			</button>
+			</button> : <div></div>}
+			
 		</form>
 	);
 }

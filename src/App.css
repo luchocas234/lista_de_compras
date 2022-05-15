@@ -76,7 +76,7 @@
 
 .formulario-tareas__btn {
 	position: absolute;
-	bottom: 40px;
+	bottom: 35px;
 	right: 20px;
 	border: none;
 	background: none;
@@ -84,7 +84,7 @@
 }
 
 .formulario-tareas__icono-btn {
-	font-size: 22px;
+	font-size: 30px;
 	color: var(--verde);
 }
 
@@ -115,6 +115,12 @@
 	opacity: 0.5;
 }
 
+.lista-tareas__tarea:hover .lista-tareas__fecha-accion{
+
+	opacity: 0.5;
+}
+
+
 .lista-tareas__tarea:nth-child(even) {
 	background: #F3F3F3;
 }
@@ -134,6 +140,16 @@
 }
 
 .lista-tareas__icono-accion {
+	margin-left: 20px;
+	opacity: 0;
+	transition: .3s ease all;
+}
+
+.lista-tareas__fecha {
+	user-select: none;
+	font-size: 14px;
+}
+.lista-tareas__fecha-accion {
 	margin-left: 20px;
 	opacity: 0;
 	transition: .3s ease all;

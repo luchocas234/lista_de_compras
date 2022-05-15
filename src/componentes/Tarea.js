@@ -15,13 +15,16 @@ export default function Tarea({tarea, toggleCompletada, editarTarea, borrarTarea
         cambiarEditandoTarea(false);
     } 
 
-    
+   
+      
+        
 
 
   return (
 
     // Creamos un elemento li que es lo que va a ser este componente. Dentro coloca
     <li className='lista-tareas__tarea'>
+
         <FontAwesomeIcon 
         icon={tarea.completada ? faCheckSquare : faSquare} 
         className="lista-tareas__icono lista-tareas__icono-check"
@@ -46,8 +49,13 @@ export default function Tarea({tarea, toggleCompletada, editarTarea, borrarTarea
             : tarea.texto
             } 
         </div>
-        <div className='lista-tareas__contenedor-botones'>
 
+        <div className='lista-tareas__contenedor-botones'>
+        {/* Fecha de creacion  */}
+        {tarea.completada ? <p className='lista-tareas__fecha lista-tareas__fecha-accion'>Completada: {tarea.fechaCompletada}</p> :
+         <p className='lista-tareas__fecha lista-tareas__fecha-accion'>Creada: {tarea.fechaCreada}</p> }
+        
+        
         {/* Icono de Editar */}
         <FontAwesomeIcon 
         icon={faEdit} 
