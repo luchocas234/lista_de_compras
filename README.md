@@ -10,13 +10,13 @@ por Carlos Arturo Esparza
 Podes Agregar, editar y borrar Tareas.
 
 
-### Extra Work
+### Extra Work 
 
-Agregué: 
+## Agregué: 
 
-##Fecha de Creacion de la tarea 
-##Fecha de Completado
-##Ver cantidad de completadas
-##Botón Borrar Todas
+# Fecha de Creacion de la tarea 
+# Fecha de Completado
+# Ver cantidad de completadas
+# Botón Borrar Todas
 
 ### Luciano Castro 
