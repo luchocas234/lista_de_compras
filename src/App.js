@@ -1,20 +1,30 @@
+import { faSnowplow } from '@fortawesome/free-solid-svg-icons';
 import React from 'react';
 import { useState, useEffect} from 'react';
 import './App.css';
+import BotonesFinal from './componentes/BotonesFinal';
 import FormularioTareas from './componentes/FormularioTareas';
 import Header from './componentes/Header';
 import ListaTareas from './componentes/ListaTareas';
 
 
 function App() {
- 
+ // Esta funcion nos permite guardar la fecha en el que se creo la tarea y se completo, mandando mediante props a los componentes
+  
+
+ const fechanew = () =>{
+  var showdate= new Date();
+  
+  var displaytodaydate = showdate.getDate()+'/'+showdate.getMonth()+'/'+showdate.getFullYear()+' - '+showdate.getHours()+':'+showdate.getMinutes()+':'+showdate.getSeconds();
+
+  return displaytodaydate;
+}
 
 
   //Obtenemos tareas guardadas de localStorage
-  const tareasGuardadas = localStorage.getItem('tareas') ? JSON.parse(localStorage.getItem('tareas')) : [] ;
+  const tareasGuardadas = localStorage.getItem('tareas') ? JSON.parse(localStorage.getItem('tareas')) : [];
  // Establecemos el estado de las tareas 
-  const [tareas, cambiarTareas] = useState(tareasGuardadas
-  );
+  const [tareas, cambiarTareas] = useState(tareasGuardadas);
 
 
   // Guardando estado en local storage
@@ -42,32 +52,31 @@ function App() {
       localStorage.setItem('mostrarCompletadas', mostrarCompletadas.toString());
   },[mostrarCompletadas]);
 
-  // Esta funcion nos permite guardar la fecha en el que se creo la tarea y se completo, mandando mediante props a los componentes
-  const fechanew = () =>{
-		var showdate= new Date();
-		var displaytodaydate = showdate.getDate()+'/'+showdate.getMonth()+'/'+showdate.getFullYear()+' - '+showdate.getHours()+':'+showdate.getMinutes();
-
-		return displaytodaydate;
-	}
-
+ 
+  
 
   return (
     <div className="contenedor">
       <Header
       tareas={tareas}
        mostrarCompletadas={mostrarCompletadas} cambiarMostrarCompletadas={cambiarMostrarCompletadas}/>
-      <FormularioTareas tareas={tareas} cambiarTareas={cambiarTareas} fechanew={fechanew}/>
+      <FormularioTareas tareas={tareas} cambiarTareas={cambiarTareas} 
+        fechanew={fechanew}
+        />
       <ListaTareas 
-      fechanew={fechanew}
+      
       tareas={tareas} 
       cambiarTareas={cambiarTareas}
-      mostrarCompletadas={mostrarCompletadas} />
-      <div>
-        <button> borrar todas</button>
+      mostrarCompletadas={mostrarCompletadas} 
+        fechanew={fechanew}
+      />
+      <BotonesFinal
+      
+        tareas={tareas} 
+        cambiarTareas={cambiarTareas}
+        fechanew={fechanew}
         
-        <button> Completar todas</button>
-       <button>Ordenar por fecha</button>
-      </div>
+      />
     </div>
   );
 }

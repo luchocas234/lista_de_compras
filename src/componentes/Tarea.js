@@ -14,10 +14,7 @@ export default function Tarea({tarea, toggleCompletada, editarTarea, borrarTarea
         editarTarea(tarea.id, nuevaTarea);
         cambiarEditandoTarea(false);
     } 
-
-   
-      
-        
+    
 
 
   return (
