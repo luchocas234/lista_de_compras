@@ -1,12 +1,15 @@
 import React, { useEffect, useState } from 'react'
 
-export default function BotonesFinal({tareas,cambiarTareas,fechanew}) {
+export default function BotonesFinal({tareas,cambiarTareas,fechanew,cambiarEstado}) {
 
 const borrarTareas = () =>{
-    cambiarTareas(tareas.filter( (tarea)=> {
-        return;
-      } ))
-}
+  
+  cambiarEstado(true)
+  
+
+    
+      
+    }
 
 
 
@@ -30,7 +33,10 @@ const borrarTareas = () =>{
 
   return (
      <div className='header'>
-        <button className='header__boton' onClick={() => borrarTareas()}>Borrar todas</button>
+       {tareas.length > 0 ? <button className='header__boton' onClick={() => borrarTareas()}>Borrar todas</button>
+     : <div></div>}
+
+       
         
         {/* <button className='header__boton'>Ordenar por fecha</button> */}
       </div>

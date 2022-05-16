@@ -2,6 +2,7 @@ import { faSnowplow } from '@fortawesome/free-solid-svg-icons';
 import React from 'react';
 import { useState, useEffect} from 'react';
 import './App.css';
+import AceptarWindow from './componentes/AceptarWindow';
 import BotonesFinal from './componentes/BotonesFinal';
 import FormularioTareas from './componentes/FormularioTareas';
 import Header from './componentes/Header';
@@ -52,8 +53,11 @@ function App() {
       localStorage.setItem('mostrarCompletadas', mostrarCompletadas.toString());
   },[mostrarCompletadas]);
 
- 
-  
+ const [estado, cambiarEstado]=useState(false)
+ const confirmarBorrar = ()=>{ 
+ cambiarTareas(tareas.filter( (tarea)=> {
+  return;
+} ))}
 
   return (
     <div className="contenedor">
@@ -72,11 +76,17 @@ function App() {
       />
       <BotonesFinal
       
-        tareas={tareas} 
-        cambiarTareas={cambiarTareas}
-        fechanew={fechanew}
-        
-      />
+      tareas={tareas} 
+      cambiarTareas={cambiarTareas}
+      fechanew={fechanew}
+      cambiarEstado={cambiarEstado}
+     
+    />
+      
+     <AceptarWindow estado={estado}
+     confirmarBorrar={confirmarBorrar}
+     cambiarEstado={cambiarEstado}/>
+      
     </div>
   );
 }
