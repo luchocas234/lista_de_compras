@@ -13,9 +13,9 @@ Podes Agregar, editar y borrar Tareas.
 ### Extra Work
 
 Agregué: 
-    Fecha de Creacion de la tarea 
-    Fecha de Completado
-    Ver cantidad de completadas
-    Botón Borrar Todas
+    -Fecha de Creacion de la tarea 
+    -Fecha de Completado
+    -Ver cantidad de completadas
+    -Botón Borrar Todas
 
 ### Luciano Castro 
