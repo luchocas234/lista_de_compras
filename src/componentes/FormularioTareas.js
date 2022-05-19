@@ -23,6 +23,7 @@ const FormularioTareas = ({tareas, cambiarTareas,fechanew}) => {
 					completada: false,
 					fechaCreada:fechanew(),
 					precio:"",
+					cantidad:1,
 				}
 			]
 		);

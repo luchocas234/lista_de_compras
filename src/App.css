@@ -200,7 +200,13 @@
 	padding: 0 10px;
 	font-family: 'Roboto', sans-serif;
 	border-radius: 3px;
-	margin-right: 10px;
+	margin-right: 0px;
+}
+
+.precio-form{
+	display:flex;
+	gap:0;
+	margin: 0;
 }
 
 /* -- Aceptar Window  -- */

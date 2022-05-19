@@ -12,6 +12,8 @@ export default function Tarea({tarea, toggleCompletada, editarTarea,editarPrecio
     const [editandoPrecio, cambiarEditandoPrecio] =useState(false);
 
     const [precio, cambiarPrecio]= useState(tarea.precio)
+    const [cant, cambiarCant]= useState(tarea.cant)
+
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -67,9 +69,20 @@ export default function Tarea({tarea, toggleCompletada, editarTarea,editarPrecio
                                     
                 onChange={(e) => cambiarPrecio(Number(e.target.value))}
                 />
+                
                 {/* <button type='submit'
                     className='formulario-editar-tarea__btn'>$
                 </button> */}
+            </form>
+            <form>
+            <input type="number" 
+                step="0.1"
+                className='formulario-editar-precio__input'
+                value={precio}
+                // llamamos al evento 'e' y luego vamos al objetivo y al valor de 'e' = e.target.value
+                                    
+                onChange={(e) => cambiarPrecio(Number(e.target.value))}
+                />
             </form>
             
         </div>
