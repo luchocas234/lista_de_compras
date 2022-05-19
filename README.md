@@ -18,4 +18,4 @@ Agregué:
 * Ver cantidad de completadas
 * Botón Borrar Todas
 
-### Luciano Castro 
+### Luciano Castro # lista_de_compras
