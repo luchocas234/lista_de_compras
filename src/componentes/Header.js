@@ -16,7 +16,7 @@ export default function Header({tareas,mostrarCompletadas, cambiarMostrarComplet
   
   return (
     <header className='header'>
-        <h1 className='header__titulo'>Lista de Tareas L|C</h1>
+        <h1 className='header__titulo'>Lista de Compras L|C</h1>
         {mostrarCompletadas ?
         <button 
         className='header__boton' 

@@ -22,7 +22,7 @@
 	justify-content: space-between;
 	height: 60px;
 	padding: 0 20px;
-	background: var(--azul);
+	background: var(--verde);
 	color: #fff;
 	border-radius: 3px 3px 0px 0px;
 }
@@ -38,7 +38,7 @@
 	color: #fff;
 	border: none;
 	cursor: pointer;
-	background: #004c92;
+	background: #147a5c;
 	padding: 5px 10px;
 	border-radius: 3px;
 	display: flex;
