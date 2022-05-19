@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/luchocas234/lista_de_compras/static/css/main.9b7c1ef7.css",
-    "main.js": "/luchocas234/lista_de_compras/static/js/main.88bb9b26.js",
+    "main.css": "/luchocas234/lista_de_compras/static/css/main.c8669e5b.css",
+    "main.js": "/luchocas234/lista_de_compras/static/js/main.36dd3e1f.js",
     "index.html": "/luchocas234/lista_de_compras/index.html",
-    "main.9b7c1ef7.css.map": "/luchocas234/lista_de_compras/static/css/main.9b7c1ef7.css.map",
-    "main.88bb9b26.js.map": "/luchocas234/lista_de_compras/static/js/main.88bb9b26.js.map"
+    "main.c8669e5b.css.map": "/luchocas234/lista_de_compras/static/css/main.c8669e5b.css.map",
+    "main.36dd3e1f.js.map": "/luchocas234/lista_de_compras/static/js/main.36dd3e1f.js.map"
   },
   "entrypoints": [
-    "static/css/main.9b7c1ef7.css",
-    "static/js/main.88bb9b26.js"
+    "static/css/main.c8669e5b.css",
+    "static/js/main.36dd3e1f.js"
   ]
 }
