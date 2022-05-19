@@ -1,15 +1,35 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 
-export default function BotonesFinal({tareas,cambiarTareas,fechanew,cambiarEstado}) {
+export default function BotonesFinal({tareas,cambiarTareas,fechanew,cambiarEstado,sumaPrecio}) {
+
+
 
 const borrarTareas = () =>{
   
   cambiarEstado(true)
-  
-
-    
       
     }
+// const sumar = () => {
+  const lala= tareas.filter( (tarea)=> {
+      if(tarea.completada === true){
+        return tarea.precio}
+        return;})
+
+//         cambiarSumaPrecio()
+// }
+
+// const sumall = fruits.map(item => item.amount).reduce((prev, curr) => prev + curr, 0);
+// console.log(sumall);
+  
+    // const sumaTotal= tareas.filter( (tarea)=> {
+    //   if(tarea.completada === true){
+    //     return tarea.precio}
+    //   return;})
+
+
+
+ 
+    
 
 
 
@@ -35,6 +55,8 @@ const borrarTareas = () =>{
      <div className='header'>
        {tareas.length > 0 ? <button className='header__boton' onClick={() => borrarTareas()}>Borrar todas</button>
      : <div></div>}
+    
+     <p>Total $: {sumaPrecio}</p>
 
        
         

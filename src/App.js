@@ -16,7 +16,7 @@ function App() {
  const fechanew = () =>{
   var showdate= new Date();
   
-  var displaytodaydate = showdate.getDate()+'/'+showdate.getMonth()+'/'+showdate.getFullYear()+' - '+showdate.getHours()+':'+showdate.getMinutes()+':'+showdate.getSeconds();
+  var displaytodaydate = showdate.getDate()+'/'+showdate.getMonth()+'/'+showdate.getFullYear()+' - '+showdate.getHours()+':'+showdate.getMinutes();
 
   return displaytodaydate;
 }
@@ -34,10 +34,23 @@ function App() {
   //  localStorage nos permite almacenar en el navegador, pero tiene que ser en cadena de texto, por eso usamos JSON stringify para poder guardar todo nuestro arreglo en una cadena.
 
     localStorage.setItem('tareas', JSON.stringify(tareas))
+     obtenerPrecio();
+    //FuncionPrecio{ }
+
   },[tareas]);
   //esto hace que el codigo se ejecute la primera vez y solo cuando "tareas" Cambien
+  
+const obtenerPrecio = () =>{
+  
+  const newTareas= tareas.filter( (tarea)=> {
+    if(tarea.completada === true){
+      return tarea;}
+    return;})
 
-
+  const suma = newTareas.map(item => Number(item.precio)).reduce((prev,curr)=> prev+curr,0);
+  cambiarSumaPrecio(suma);
+  console.log(suma)
+}
 
   // Accedemos al localStorage y comprobamos si mostrarCompletadas es null
   let configMostrarCompletadas = '';
@@ -53,11 +66,22 @@ function App() {
       localStorage.setItem('mostrarCompletadas', mostrarCompletadas.toString());
   },[mostrarCompletadas]);
 
+const [sumaPrecio,cambiarSumaPrecio] =useState(0);
+
+
  const [estado, cambiarEstado]=useState(false)
  const confirmarBorrar = ()=>{ 
  cambiarTareas(tareas.filter( (tarea)=> {
   return;
 } ))}
+
+
+// Funcion de suma de Precios 
+
+
+  
+
+
 
   return (
     <div className="contenedor">
@@ -73,6 +97,8 @@ function App() {
       cambiarTareas={cambiarTareas}
       mostrarCompletadas={mostrarCompletadas} 
         fechanew={fechanew}
+        sumaPrecio={sumaPrecio}
+        cambiarSumaPrecio={cambiarSumaPrecio}
       />
       <BotonesFinal
       
@@ -80,6 +106,7 @@ function App() {
       cambiarTareas={cambiarTareas}
       fechanew={fechanew}
       cambiarEstado={cambiarEstado}
+      sumaPrecio={sumaPrecio}
      
     />
       

@@ -22,6 +22,7 @@ const FormularioTareas = ({tareas, cambiarTareas,fechanew}) => {
 					texto: inputTarea,
 					completada: false,
 					fechaCreada:fechanew(),
+					precio:"",
 				}
 			]
 		);

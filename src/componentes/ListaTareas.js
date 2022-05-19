@@ -4,17 +4,20 @@ import Tarea from './Tarea'
 // Dentro de este componente vamos a agregar las funciones que nos permite poder modificar o borrar nuestras tareas
 
 
-function ListaTareas({tareas, cambiarTareas, mostrarCompletadas, fechanew}) {
+function ListaTareas({tareas, cambiarTareas, mostrarCompletadas, fechanew,sumaPrecio,cambiarSumaPrecio}) {
 
 const toggleCompletada= (id)=>{
   
   cambiarTareas(tareas.map( (tarea)=> {
+    
     if(tarea.id === id){
+      
       return {...tarea, completada: !tarea.completada,
       fechaCompletada:fechanew()
       }
     }
     return tarea;
+    
   } ))
 }
 
@@ -23,6 +26,16 @@ const editarTarea= (id, nuevoTexto)=>{
   cambiarTareas(tareas.map( (tarea)=> {
     if(tarea.id === id){
       return {...tarea, texto: nuevoTexto}
+    }
+    return tarea;
+  } ))
+}
+
+const editarPrecio= (id, nuevoPrecio)=>{
+  
+  cambiarTareas(tareas.map( (tarea)=> {
+    if(tarea.id === id){
+      return {...tarea, precio: nuevoPrecio}
     }
     return tarea;
   } ))
@@ -48,6 +61,7 @@ const borrarTarea= (id )=>{
           return <Tarea 
                   key={tarea.id} 
                   tarea={tarea}
+                  editarPrecio={editarPrecio}
                   editarTarea={editarTarea} // le pasamos funcion al componente
                   toggleCompletada={toggleCompletada}//acá le pasamos la funciona al componente tarea
                   borrarTarea={borrarTarea}/>

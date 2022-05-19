@@ -102,13 +102,13 @@
 	align-items: center;
 	color: #4B4B4B;
 	font-size: 18px;
-	display: grid;
-	grid-template-columns: auto 1fr auto;
+	display: flex;
+	justify-content: space-between;		
 }
 
 .lista-tareas__texto {
 	text-align: left;
-	width: 100%;
+	width: 50%;
 }
 
 .lista-tareas__tarea:hover .lista-tareas__icono-accion {
@@ -131,7 +131,9 @@
 
 .lista-tareas__icono {
 	cursor: pointer;
-	font-size: 16px;
+	font-size: 20px;
+	align-self: center;
+	margin-left: 20px;
 }
 
 .lista-tareas__icono-check {
@@ -150,7 +152,8 @@
 	font-size: 14px;
 }
 .lista-tareas__fecha-accion {
-	margin-left: 20px;
+	
+	text-align: center;
 	opacity: 0;
 	transition: .3s ease all;
 }
@@ -174,7 +177,18 @@
 	background: none;
 	font-size: 20px;
 	font-family: 'Roboto', sans-serif;
-	margin-right: 20px;
+	margin-right: 10px;
+}
+
+.formulario-editar-precio__input {
+	width:50%;
+	border: none;
+	border: 2px solid #b8b8b8;
+	background: none;
+	font-size: 16px;
+	text-align: center;
+	font-family: 'Roboto', sans-serif;
+	margin-right: 5px;
 }
 
 .formulario-editar-tarea__btn {
@@ -182,9 +196,11 @@
 	background: var(--verde);
 	cursor: pointer;
 	color: #fff;
+	font-size: 10px;
 	padding: 0 10px;
 	font-family: 'Roboto', sans-serif;
 	border-radius: 3px;
+	margin-right: 10px;
 }
 
 /* -- Aceptar Window  -- */
